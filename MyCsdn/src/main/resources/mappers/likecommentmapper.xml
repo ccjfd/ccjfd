@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<mapper namespace="com.linbinghui.csdn.dao.LikecommentMapper">
+    <!--查询
+        parameterType 输入参数类型
+        resultType返回参数类型
+    -->
+    <insert id="insert" resultType="com.linbinghui.csdn.entity.Likecomment" parameterType="com.linbinghui.csdn.entity.Likecomment">
+        INSERT INTO likecomment(id,likerid,likedcommentid) values(#{id},#{likerid},#{likedcommentid})
+    </insert>
+    <delete id="delete" resultType="com.linbinghui.csdn.entity.Likecomment" parameterType="com.linbinghui.csdn.entity.Likecomment">
+        DELETE FROM likecomment WHERE id=#{id}
+    </delete>
+    <select id="selectBylikedcomment" resultType="com.linbinghui.csdn.entity.Likecomment" parameterType="com.linbinghui.csdn.entity.Likecomment">
+        SELECT * FROM likecomment WHERE likedcommentid=#{likedcommentid}
+    </select>
+</mapper>

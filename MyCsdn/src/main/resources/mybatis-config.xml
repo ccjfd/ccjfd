@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>
+    <!--<properties resource="db.properties"/>-->
+    <!--数据库配置信息-->
+    <dataSource>
+        <property name="driverClass" value="com.mysql.cj.jdbc.Driver"/>
+        <property name="jdbcUrl" value="jdbc:mysql:///mycsdn?useSSL=false&amp;allowPublicKeyRetrieval=true&amp;serverTimezone=Asia/Shanghai"/>
+        <property name="username" value="root"/>
+        <property name="password" value="913.Linbinghui"/>
+    </dataSource>
+
+    <!-- 存放mapper.xml的全路径 -->
+    <!--<mapper resource="mappers/usermapper.xml"></mapper>-->
+    <mappers>
+        <mapper resource="mappers/usermapper.xml"/>
+        <mapper resource="mappers/blogmapper.xml"/>
+        <mapper resource="mappers/commentmapper.xml"/>
+        <mapper resource="mappers/likecommentmapper.xml"/>
+        <mapper resource="mappers/columnmapper.xml"/>
+        <mapper resource="mappers/followmapper.xml"/>
+        <mapper resource="mappers/likeblogmapper.xml"/>
+        <mapper resource="mappers/adminmapper.xml"/>
+    </mappers>
+</configuration>
+
+

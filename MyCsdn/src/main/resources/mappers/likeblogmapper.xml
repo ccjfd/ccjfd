@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<mapper namespace="com.linbinghui.csdn.dao.LikeblogMapper">
+    <!--查询
+        parameterType 输入参数类型
+        resultType返回参数类型
+    -->
+    <select id="selectByblogid" resultType="com.linbinghui.csdn.entity.Likeblog" parameterType="com.linbinghui.csdn.entity.Likeblog">
+        SELECT * FROM likeblog WHERE likedblogid=#{likedblogid}
+    </select>
+    <select id="selectByuserid" resultType="com.linbinghui.csdn.entity.Likeblog" parameterType="com.linbinghui.csdn.entity.Likeblog">
+        SELECT * FROM likeblog WHERE likerid=#{likerid}
+    </select>
+    <insert id="insert" resultType="com.linbinghui.csdn.entity.Likeblog" parameterType="com.linbinghui.csdn.entity.Likeblog">
+        INSERT INTO likeblog(id,likerid,likedblogid) values(#{id},#{likerid},#{likedblogid})
+    </insert>
+    <delete id="delete" resultType="com.linbinghui.csdn.entity.Likeblog" parameterType="com.linbinghui.csdn.entity.Likeblog">
+        DELETE FROM likeblog WHERE id=#{id}
+    </delete>
+
+</mapper>

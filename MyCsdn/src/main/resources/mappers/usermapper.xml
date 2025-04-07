@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<mapper namespace="com.linbinghui.csdn.dao.UserMapper">
+<!--查询
+    parameterType 输入参数类型
+    resultType返回参数类型
+-->
+    <select id="selectById" resultType="com.linbinghui.csdn.entity.User" parameterType="com.linbinghui.csdn.entity.User">
+        SELECT * FROM user WHERE id=#{id}
+    </select>
+    <select id="selectlist" resultType="com.linbinghui.csdn.entity.User" parameterType="com.linbinghui.csdn.entity.User">
+        SELECT * FROM user
+    </select>
+    <select id="selectBanUser" resultType="com.linbinghui.csdn.entity.User" parameterType="com.linbinghui.csdn.entity.User">
+        SELECT * FROM user WHERE status='ban'
+    </select>
+    <insert id="insert" resultType="com.linbinghui.csdn.entity.User" parameterType="com.linbinghui.csdn.entity.User">
+        INSERT INTO user(id,name,password,status) values(#{id},#{name},#{password},#{status})
+    </insert>
+
+    <select id="selectByName" resultType="com.linbinghui.csdn.entity.User" parameterType="com.linbinghui.csdn.entity.User">
+        SELECT * FROM user WHERE name=#{name}
+    </select>
+    <update id="updateUserStatus" resultType="com.linbinghui.csdn.entity.User" parameterType="com.linbinghui.csdn.entity.User">
+        UPDATE user SET status=#{status} WHERE id=#{id}
+    </update>
+</mapper>

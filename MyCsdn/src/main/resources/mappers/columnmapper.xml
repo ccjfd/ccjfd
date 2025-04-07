@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<mapper namespace="com.linbinghui.csdn.dao.ColumnMapper">
+    <!--查询
+        parameterType 输入参数类型
+        resultType返回参数类型
+    -->
+    <select id="selectlist" resultType="com.linbinghui.csdn.entity.Column" parameterType="com.linbinghui.csdn.entity.Column">
+        select * from `column`
+    </select>
+    <select id="selectByUId" resultType="com.linbinghui.csdn.entity.Column" parameterType="com.linbinghui.csdn.entity.Column">
+        SELECT * FROM `column` WHERE userid=#{userid}
+    </select>
+    <select id="selectByColumnName" resultType="com.linbinghui.csdn.entity.Column" parameterType="com.linbinghui.csdn.entity.Column">
+        SELECT * FROM `column` WHERE columnname=#{columnname}
+    </select>
+    <insert id="insert" resultType="com.linbinghui.csdn.entity.Column" parameterType="com.linbinghui.csdn.entity.Column">
+        INSERT INTO `column`(id,userid,columnname) values(#{id},#{userid},#{columnname})
+    </insert>
+    <delete id="deleteByColumnName" resultType="com.linbinghui.csdn.entity.Column" parameterType="com.linbinghui.csdn.entity.Column">
+        DELETE FROM `column` WHERE columnname=#{columnname}
+    </delete>
+</mapper>

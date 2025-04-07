@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<mapper namespace="com.linbinghui.csdn.dao.CommentMapper">
+    <!--查询
+        parameterType 输入参数类型
+        resultType返回参数类型
+    -->
+    <select id="list" resultType="com.linbinghui.csdn.entity.Comment" parameterType="com.linbinghui.csdn.entity.Comment">
+        select * from `comment`
+    </select>
+    <insert id="insert" resultType="com.linbinghui.csdn.entity.Comment" parameterType="com.linbinghui.csdn.entity.Comment">
+        INSERT INTO `comment` values(#{id},#{userid},#{blogid},#{content},CURRENT_TIMESTAMP,#{likenum})
+    </insert>
+    <delete id="delete" resultType="com.linbinghui.csdn.entity.Comment" parameterType="com.linbinghui.csdn.entity.Comment">
+        DELETE FROM `comment` WHERE id=#{id}
+    </delete>
+    <update id="updateLikenum" resultType="com.linbinghui.csdn.entity.Comment" parameterType="com.linbinghui.csdn.entity.Comment">
+        UPDATE `comment` SET likenum=#{likenum} WHERE id=#{id}
+    </update>
+    <select id="selectCommentBycommentid" resultType="com.linbinghui.csdn.entity.Comment" parameterType="com.linbinghui.csdn.entity.Comment">
+        select * from `comment` where id=#{id}
+    </select>
+    <select id="selectCommentByBlogId" resultType="com.linbinghui.csdn.entity.Comment" parameterType="com.linbinghui.csdn.entity.Comment">
+        select * from `comment` where blogid=#{blogid}
+    </select>
+
+
+
+</mapper>

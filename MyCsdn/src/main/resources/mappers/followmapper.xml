@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<mapper namespace="com.linbinghui.csdn.dao.FollowMapper">
+    <!--查询
+        parameterType 输入参数类型
+        resultType返回参数类型
+    -->
+    <select id="selectByUserId" resultType="com.linbinghui.csdn.entity.Follow" parameterType="com.linbinghui.csdn.entity.Follow">
+        select * from follow where followerid=#{followerid}
+    </select>
+
+    <insert id="insert" resultType="com.linbinghui.csdn.entity.Follow" parameterType="com.linbinghui.csdn.entity.Follow">
+        INSERT INTO follow(id,followerid,followedid) values(#{id},#{followerid},#{followedid})
+    </insert>
+    <delete id="delete" resultType="com.linbinghui.csdn.entity.Follow" parameterType="com.linbinghui.csdn.entity.Follow">
+        DELETE FROM follow WHERE id=#{id}
+    </delete>
+
+</mapper>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<mapper namespace="com.linbinghui.csdn.dao.BlogMapper">
+    <!--查询
+        parameterType 输入参数类型
+        resultType返回参数类型
+    -->
+    <select id="selectlist" resultType="com.linbinghui.csdn.entity.Blog" parameterType="com.linbinghui.csdn.entity.Blog">
+        select * from `blog`
+    </select>
+    <select id="selectBlogAgainstnumOrder" resultType="com.linbinghui.csdn.entity.Blog" parameterType="com.linbinghui.csdn.entity.Blog">
+            select * from `blog` order by againstnum
+    </select>
+
+    <select id="selectBlogByUId" resultType="com.linbinghui.csdn.entity.Blog" parameterType="com.linbinghui.csdn.entity.Blog">
+        select * from `blog` where userid=#{userid}
+    </select>
+
+    <select id="selectBlogByColumnId" resultType="com.linbinghui.csdn.entity.Blog" parameterType="com.linbinghui.csdn.entity.Blog">
+        select * from `blog` where columnid=#{columnid}
+    </select>
+    <select id="selectBlogById" resultType="com.linbinghui.csdn.entity.Blog" parameterType="com.linbinghui.csdn.entity.Blog">
+        select * from `blog` where id=#{id}
+    </select>
+    <select id="selectBlogByTitle" resultType="com.linbinghui.csdn.entity.Blog" parameterType="com.linbinghui.csdn.entity.Blog">
+        select * from `blog` where title=#{title}
+    </select>
+    <insert id="insert" resultType="com.linbinghui.csdn.entity.Blog" parameterType="com.linbinghui.csdn.entity.Blog">
+        INSERT INTO `blog` values(#{id},#{userid},#{columnid},#{title},#{content},CURRENT_TIMESTAMP,#{commentnum},#{likenum},#{againstnum},#{order})
+    </insert>
+    <update id="updateBlogTitle" resultType="com.linbinghui.csdn.entity.Blog" parameterType="com.linbinghui.csdn.entity.Blog">
+        UPDATE `blog` SET title=#{title} WHERE id=#{id}
+    </update>
+    <update id="updateBlogContent" resultType="com.linbinghui.csdn.entity.Blog" parameterType="com.linbinghui.csdn.entity.Blog">
+        UPDATE `blog` SET content=#{content} WHERE id=#{id}
+    </update>
+    <update id="updateBlogColumnid" resultType="com.linbinghui.csdn.entity.Blog" parameterType="com.linbinghui.csdn.entity.Blog">
+        UPDATE `blog` SET columnid=#{columnid} WHERE id=#{id}
+    </update>
+    <update id="updateBlogLike" resultType="com.linbinghui.csdn.entity.Blog" parameterType="com.linbinghui.csdn.entity.Blog">
+        UPDATE `blog` SET likenum=#{likenum} WHERE id=#{id}
+    </update>
+    <update id="updateBlogReport" resultType="com.linbinghui.csdn.entity.Blog" parameterType="com.linbinghui.csdn.entity.Blog">
+        UPDATE `blog` SET againstnum=#{againstnum} WHERE id=#{id}
+    </update>
+    <update id="updateBlogOrder" resultType="com.linbinghui.csdn.entity.Blog" parameterType="com.linbinghui.csdn.entity.Blog">
+        UPDATE blog SET `order`=#{order} WHERE id=#{id}
+    </update>
+    <delete id="deleteBlog" resultType="com.linbinghui.csdn.entity.Blog" parameterType="com.linbinghui.csdn.entity.Blog">
+        DELETE FROM `blog` WHERE id=#{id}
+    </delete>
+
+
+</mapper>

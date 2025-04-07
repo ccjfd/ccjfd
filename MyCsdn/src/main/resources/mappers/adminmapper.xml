@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<mapper namespace="com.linbinghui.csdn.dao.AdminMapper">
+    <!--查询
+        parameterType 输入参数类型
+        resultType返回参数类型
+    -->
+    <select id="selectByName" resultType="com.linbinghui.csdn.entity.Admin" parameterType="com.linbinghui.csdn.entity.Admin">
+        SELECT * FROM `admin` WHERE adminname=#{adminname} AND adminpassword=#{adminpassword}
+    </select>
+    <insert id="insert" resultType="com.linbinghui.csdn.entity.Admin" parameterType="com.linbinghui.csdn.entity.Admin">
+        INSERT INTO `admin` (id,adminname,adminpassword) values(#{id},#{adminname},#{adminpassword})
+    </insert>
+
+</mapper>
